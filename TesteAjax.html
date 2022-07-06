@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Introdução ao AJAX</title>
+        <meta charset="UTF-8"/>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(
+                function(){
+                    $("#mais").click(
+                        function(){
+                            $.ajax({url:"/jquery/getdata", success: function(resultado){
+                                $("#info").html(resultado);
+                            }});
+                        }
+                    );
+                }
+            );
+        </script>
+    </head>
+    <body>
+        <h1>Olá AJAX!</h1>
+        Conteúdo Original!
+        <input type="button" id="mais" value="Mais informações:"/>
+        <div id="info"></div>
+    </body>
+</html>
